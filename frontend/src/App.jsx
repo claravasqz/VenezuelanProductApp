@@ -2,6 +2,12 @@ import React, { useState, useEffect } from 'react';
 import Stores from './components/Stores';
 import NewStoreForm from './components/NewStoreForm';
 import './App.css';
+import {BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
+import FindByStore from './pages/FindByStore';
+import FindByProduct from './pages/FindByProduct';
+import MostPopularProducts from './pages/MostPopularProducts';
+import Home from './pages/Home';
+
 
 function App() {
   const [stores, setStores] = useState([]);
@@ -21,11 +27,24 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <h1>Venezuelan Product Finder</h1>
-      <NewStoreForm onStoreAdded={handleStoreAdded} />
-      <Stores stores={stores} />
-    </div>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li Link to="/">Home</li>
+            <li Link to="/stores">Find By Store</li>
+            <li Link to="/products">Find by Product</li>
+            <li Link to="/popular-products">Most Popular Products</li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route path="/" element={<Home />}/>
+          <Route path="/stores" element={<FindByStore />}/>
+          <Route path="/products" element={<FindByProduct />}/>
+          <Route path="/popular-products" element={<MostPopularProducts />}/>
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
