@@ -31,10 +31,10 @@ function App() {
       <div>
         <nav>
           <ul>
-            <li Link to="/">Home</li>
-            <li Link to="/stores">Find By Store</li>
-            <li Link to="/products">Find by Product</li>
-            <li Link to="/popular-products">Most Popular Products</li>
+            <li> <Link to="/">Home</Link></li>
+            <li> <Link to="/stores">Find By Store</Link></li>
+            <li><Link to="/products">Find by Product</Link></li>
+            <li><Link to="/popular-products">Most Popular Products</Link></li>
           </ul>
         </nav>
         <Routes>
