@@ -74,12 +74,27 @@ app.delete('/stores/:id', async (req, res) => {
     }
 });
 
+app.get('/products/popular', async (req, res) => {
+    try{
+        const popularProducts = await Product.find().sort({ views: -1 }).limit(5);
+        res.json(popularProducts);
+    } catch (error) {
+        console.error('Error fetching popular products:', error);
+        res.status(500).json({message: error.message});
+    }
+});
+
+
 app.get('/products/:id', async (req, res) => {
     try {
-        const product = await Product.findById(req.params.id).populate('store', 'name address');
+        const product = await Product.findByIdAndUpdate(req.params.id, { $inc: { views: 1 } },
+            {new: true}
+        ).populate('store', 'name address');
+
         if (!product) {
             return res.status(404).json({ message: 'Product not found' });
         }
+
         res.json(product);
     } catch (error) {
         res.status(500).json({ message: error.message });

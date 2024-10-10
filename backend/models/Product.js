@@ -17,6 +17,10 @@ const productSchema = new mongoose.Schema({
         ref: 'Store',
         required: true,
     },
+    views: {
+        type: Number,
+        default: 0, 
+    }
 });
 
 const Product = mongoose.model('Product', productSchema);

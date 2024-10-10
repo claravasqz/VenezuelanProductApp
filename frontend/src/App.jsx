@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import Stores from './components/Stores';
-import NewStoreForm from './components/NewStoreForm';
-import './App.css';
+import React from 'react';
 import {BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
+import './App.css';
+
+
 import FindByStore from './pages/FindByStore';
 import FindByProduct from './pages/FindByProduct';
 import MostPopularProducts from './pages/MostPopularProducts';
@@ -10,21 +10,6 @@ import Home from './pages/Home';
 
 
 function App() {
-  const [stores, setStores] = useState([]);
-
-  useEffect(() => {
-    const fetchStores = async () => {
-      const response = await fetch('http://localhost:3000/stores');
-      const data = await response.json();
-      setStores(data);
-    };
-
-    fetchStores();
-  }, []); 
-
-  const handleStoreAdded = (newStore) => {
-    setStores([...stores, newStore]);
-  };
 
   return (
     <Router>
