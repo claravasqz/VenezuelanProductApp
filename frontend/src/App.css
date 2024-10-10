@@ -40,12 +40,6 @@ body {
   gap: 10px;
 }
 
-.buttonGroup{
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
 .homeButton{
   padding: 10px 20px;
   background-color: #ffcc00;
@@ -74,17 +68,30 @@ body {
 
 .navbar{
   background-color: #002c5f;
-  
+  /* border: solid red; */
+  /* padding: 10px; */
+  display: flex;
+  justify-content: space-evenly;
+  border-radius: 10px;
+
 }
 
 .navbarList{
   display: flex;
   list-style-type: none;
-  padding: 0;
+  padding: 10px;
+  /* border: solid red; */
+  margin: 0;
+  /* justify-content: space-evenly; */
 }
 
 .navbarItem{
-  margin: 10px;
+  /* margin-right: 10px; */
+  margin: 0;
+  padding: 0;
+  /* border: solid yellow; */
+
+
 }
 
 .navbarLink {
@@ -92,7 +99,6 @@ body {
   text-decoration: none;
   font-weight: bold;
   padding: 10px;
-  transition: background-color 0.3s ease;
 }
 
 .navbarLink:hover{
@@ -104,6 +110,66 @@ body {
 .content{
   padding: 20px;
   background-color: #f9f9f9;
+}
+
+.findByStoreContainer {
+  padding: 20px;
+  background-color: #fff;
+  /* border: solid red; */
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 44, 95, 0.3);
+}
+
+.storeTitle {
+  font-size: 2.5em;
+  color: #002c5f;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.loadingMessage {
+  color: #002c5f;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.errorMessage {
+  color: red;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.selectedStoreDetails {
+  margin-top: 20px;
+  padding: 20px;
+  border: solid red;
+  background-color: #f9f9f9;
+  border: 2px solid #ffcc00;
+  border-radius: 8px;
+}
+
+.storeName {
+  font-size: 1.8em;
+  color: #002c5f;
+  margin-bottom: 10px;
+}
+
+.productList{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.productItem {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1px solid #002c5f;
+  border-radius: 4px;
+  font-size: 1.2em;
+  color: #002c5f;
 }
 
 @media (max-width: 600px) {

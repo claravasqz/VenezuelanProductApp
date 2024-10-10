@@ -1,6 +1,7 @@
 require('dotenv').config();
 const cors = require('cors');
 const express = require('express');
+const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const connectToDb = require('./config/connectToDb');
@@ -10,24 +11,24 @@ const Product = require('./models/Product');
 
 connectToDb();
 app.use(cors());
+app.use(express.json());
 
 // ----------------------------
 
-app.use(express.json());
+app.use(express.static(path.join(__dirname, '../frontend/build')));
 
 app.post('/stores', async (req, res) => {
-    const { name, address } = req.body;
-    const newStore = new Store({
-        name,
-        address,
-    });
-    await newStore.save();
-    res.json(newStore);
+    try{
+    const store = await Store.find();
+    res.json(stores);
+     } catch (error) {
+        res.status(500).json({ message: error.message});
+     }
 });
 
 app.get('/stores', async (req, res) => {
     try {
-        const stores = await Store.find();
+        const stores = await Store.find(); // Fetch all stores
         res.json(stores);
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -170,8 +171,8 @@ app.get('/products', async (req, res) => {
 
 // ----------------------------
 
-app.get('/', (req, res) => {
-    res.send('Venezuelan Product Finder API is running');
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
 });
 
 

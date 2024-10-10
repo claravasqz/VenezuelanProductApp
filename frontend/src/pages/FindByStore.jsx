@@ -56,23 +56,23 @@ function FindByStore() {
 };
 
     return(
-        <div>
-            <h1>Find Products by Store</h1>
+        <div className="findByStoreContainer">
+            <h1 className="storeTitle">Find Products by Store</h1>
             <NewStoreForm onStoreAdded={handleStoreAdded} />
 
             {loading ? (
-            <div>Loading..</div>
+            <div className="loadingMessage">Loading..</div>
             ) : error ? (
-                <div>Error: {error}</div>
+                <div className="errorMessage">Error: {error}</div>
             ) : (
                 <Stores stores={stores} onStoreDeleted={handleStoreDeleted} viewProducts={viewProducts} />
                 )}
             {selectedStore && !loading && !error && (
-                <div>
-                    <h2>Products in {selectedStore.name}</h2>
-            <ul>
+                <div className="selectedStoreDetails">
+                    <h2 className="storeName">Products in {selectedStore.name}</h2>
+            <ul className="productList">
                 {selectedStore.products.map((product) => (
-                    <li key={product._id}>
+                    <li key={product._id} className="productItem">
                         {product.name} -${product.price}
                     </li>
                 ))}
