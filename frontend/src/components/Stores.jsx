@@ -53,28 +53,29 @@ const Stores = ({ stores, onStoreDeleted, viewProducts }) => {
 
 
   return (
-    <div>
-      <h2>Stores</h2>
-      <ul>
+    <div className="storesContainer">
+      <h2 className="storesTitle">Stores</h2>
+      <ul className="storesList">
         {stores.map((store) => (
-          <li key={store._id}>
+          <li className="storeItem" key={store._id}>
             {store.name} - {store.address}
-            <button onClick={() => fetchStoreDetails(store._id)}>View Details</button>
-            <button onClick={() => deleteStore(store._id)}>Delete Store</button>
+            <div className="storeButtons"></div>
+                <button className="viewDetailsButton" onClick={() => fetchStoreDetails(store._id)}>View Details</button>
+                <button className="deleteStoreButton" onClick={() => deleteStore(store._id)}>Delete Store</button>
           </li>
         ))}
       </ul>
 
 
       {storeDetails && (
-        <div>
-          <h3>{storeDetails.name} - {storeDetails.address}</h3>
-          <h4>Products:</h4>
-          <ul>
+        <div className="storeDetails">
+          <h3 className="storeDetailsTitle">{storeDetails.name} - {storeDetails.address}</h3>
+          <h4 className="storeProductsTitle">Products:</h4>
+          <ul className="productsList">
             {storeDetails.products.map((product) => (
-              <li key={product._id}>
+              <li className="productItem" key={product._id}>
                 {product.name} - {product.price}
-                <button onClick={() => deleteProduct(product._id)}>Delete Product</button>
+                <button className="deleteProductButton" onClick={() => deleteProduct(product._id)}>Delete Product</button>
               </li>
             ))}
           </ul>

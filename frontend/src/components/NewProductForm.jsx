@@ -31,33 +31,43 @@ const NewProductForm = ({ storeId, onProductAdded }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>Product Name:</label>
-      <input
-        type="text"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        required
-      />
+    <form className="productForm" onSubmit={handleSubmit}>
+        <div className="formGroup">
+            <label className="formLabel">Product Name:</label>
+            <input className= "formInput"
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+        />
+      </div>
 
-      <label>Price:</label>
+    
+    <div className="formGroup">
+
+      <label className="formLabel">Price:</label>
       <input
+        className="formInput"
         type="number"
         step="0.01"
         value={price}
         onChange={(e) => setPrice(e.target.value)}
         required
       />
+      </div>
 
-      <label>Category:</label>
+      <div className="formGroup">
+        <label className="formLabel">Category:</label>
       <input
+        className="formInput"
         type="text"
         value={category}
         onChange={(e) => setCategory(e.target.value)}
         required
       />
+      </div>
 
-      <button type="submit">Add Product</button>
+      <button className="submitBtn" type="submit">Add Product</button>
     </form>
   );
 };
