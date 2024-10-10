@@ -29,22 +29,22 @@ const NewStoreForm = ({ onStoreAdded }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-        <label>Store Name:</label>
-        <input
+    <form className="storeForm" onSubmit={handleSubmit}>
+        <label className="storeFormLabel">Store Name:</label>
+        <input className="storeFormInput"
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
         />
-        <label>Store Address:</label>
-        <input
+        <label className="storeFormLabel">Store Address:</label>
+        <input className="storeFormInput"
           type="text"
           value={address}
           onChange={(e) => setAddress(e.target.value)}
           required
         />
-      <button type="submit">Add Store</button>
+      <button className="storeFormButton" type="submit">Add Store</button>
     </form>
   );
 };

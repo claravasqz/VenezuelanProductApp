@@ -225,3 +225,44 @@ body {
     color: #002c5f;
   }
 }
+
+.storeForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 2px solid #002c5f;
+  border-radius: 8px;
+}
+
+.storeFormImput {
+  padding: 8px;
+  border: 1px solid #002c5f;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.storeFormInput {
+  padding: 8px;
+  border: 1px solid #002c5f;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.storeFormButton {
+  padding: 10px 20px;
+  background-color: #ffcc00;
+  color: #002c5f;
+  border: 2px solid #002c5f;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.storeFormButton:hover{
+  background-color: #002c5f;
+  color: #ffcc00;
+}
