@@ -28,17 +28,17 @@ function FindByProduct() {
     }, []);
 
     return(
-        <div>
-            <h1>Find Products by Product Name</h1>
+        <div className="productContainer">
+            <h1 className="productTitle">Find Products by Product Name</h1>
 
             {loading ? (
-                <div>Loading..</div>
+                <div className="loading">Loading..</div>
             ) : error ? ( 
-                <div>Error: {error}</div>
+                <div className="errorMessage">Error: {error}</div>
             ) : (
-            <ul>
+            <ul className="productList">
                 {products.map((product) => (
-                    <li key={product._id}>
+                    <li className="productItem" key={product._id}>
                         {product.name} - ${product.price} ({product.category})
                     </li>
                 ))}

@@ -27,24 +27,24 @@ function MostPopularProducts() {
     }, []);
 
     return(
-        <div>
-            <h1>Most Popular Products</h1>
+        <div className="popularProductsContainer">
+            <h1 className="popularProductsTitle">Most Popular Products</h1>
 
             {loading ? (
-                <div>Loading..</div>
+                <div className="loadingMessage">Loading..</div>
             ) : error ? (
-                <div>Error: {error}</div>
+                <div className="errorMessage">Error: {error}</div>
             ) : (
-            <ul>
+            <ul className="popularProductsList">
                 {products.map((product) => (
-                    <li key={product._id}>
+                    <li className="popularProductItem" key={product._id}>
                         {product.name} - ${product.price} (Views: {product.views})
                     </li>
                 ))}
             </ul>
         )}
     </div>
-    
+
     );
 }
 
