@@ -1,92 +1,110 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+  background-image: url('https://i.pinimg.com/736x/84/d4/b7/84d4b787da1cdefa1793ee880508f391.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
   margin: 0;
   padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.App {
+.homeContainer{
+  text-align: center;
+  padding: 40px;
+  background-color: #ffcc00;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.homeTitle{
+  color: #002c5f;
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+.homeDescription{
+  color: #002c5f;
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
+
+.buttonGroup{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.buttonGroup{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.homeButton{
+  padding: 10px 20px;
+  background-color: #ffcc00;
+  color: #002c5f;
+  border: 2px solid #002c5f;
+  border-radius: 4pc;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3 ease;
+}
+
+.homeButton:hover {
+  background-color: #002c5f;
+  color: #ffcc00;
+}
+
+
+.appContainer {
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
   background-color: white;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 44, 95, 0.3);
 }
 
-h1 {
-  text-align: center;
-  color: #333;
+.navbar{
+  background-color: #002c5f;
+  
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  margin: 10px 0;
-  padding: 10px;
-  background-color: #fafafa;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-button {
-  padding: 6px 12px;
-  color: rgb(18, 17, 17);
-  border: solid black;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-label {
-  font-weight: bold;
-}
-
-input {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-nav ul{
+.navbarList{
   display: flex;
   list-style-type: none;
   padding: 0;
-  background-color: #007bff;
 }
 
-nav ul li{
+.navbarItem{
   margin: 10px;
 }
 
-nav ul li a{
-  color: black;
+.navbarLink {
+  color: white;
   text-decoration: none;
   font-weight: bold;
   padding: 10px;
+  transition: background-color 0.3s ease;
 }
 
-nav ul li a:hover {
-  background-color: #0056b3;
+.navbarLink:hover{
+  background-color: #ffcc00;
   border-radius: 5px;
+  color: #002c5f;
 }
 
+.content{
+  padding: 20px;
+  background-color: #f9f9f9;
+}
 
 @media (max-width: 600px) {
   .App {
@@ -120,7 +138,7 @@ nav ul li a:hover {
     margin: 10px 0;
     background-color: #fff;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #ffcc00;
     display: block;
     width: 100%;
     box-sizing: border-box;
@@ -128,8 +146,8 @@ nav ul li a:hover {
 
   button{
     padding: 8px 16px;
-    background-color: #007bff;
-    color: white;
+    background-color: #002c5f;
+    color: #ffcc00;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -137,6 +155,7 @@ nav ul li a:hover {
   }
 
   button:hover {
-    background-color: #0056b3;
+    background-color: #ffcc00;
+    color: #002c5f;
   }
 }
